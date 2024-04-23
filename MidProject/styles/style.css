@@ -121,9 +121,14 @@ nav ul li {
     align-items: center;
 }
 
-
 nav ul li a {
     color: #232e35;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: var(--primaryIconColorHover); /* Mengubah warna saat dihover */
+    transform: translateY(-3px); /* Menggeser elemen ke atas saat kursor mengarah */
 }
 
 /* Burger */
