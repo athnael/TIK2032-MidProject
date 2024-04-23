@@ -73,31 +73,31 @@
       font-size: 0.8rem;
     }
   
-    /* Hero Section */
-    #hero {
+    /* Home Section */
+    #home {
       grid-template-columns: 1fr;
       height: fit-content;
     }
   
-    .hero-right {
+    .home-right {
       order: -1;
     }
   
-    .hero-right img {
+    .home-right img {
       width: 50%;
     }
   
-    .hero-left {
+    .home-left {
       text-align: center;
       padding-bottom: 5rem;
     }
   
-    .hero-left .pre-title {
+    .home-left .pre-title {
       margin: 0 auto;
       
     }
   
-    .hero-name {
+    .home-name {
       font-size: 2.3rem;
       margin-bottom: 0.5rem;
     }
