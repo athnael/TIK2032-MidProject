@@ -144,29 +144,29 @@ nav ul li a {
     right: 35px;
 }
 
-/* Hero Section */
-#hero {
+/* Home Section */
+#home {
     height: 720px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
 }
 
-.hero-name {
+.home-name {
     font-size: 3rem;
     font-weight: 700;
     margin: 0.5rem 0 1 rem;
 }
 
-.hero-name span {
+.home-name span {
     color: steelblue;
 }
 
-.hero-right img {
+.home-right img {
     width: 70%;
 }
 
-.hero-right {
+.home-right {
     display: flex;
     justify-content: center;
 }
