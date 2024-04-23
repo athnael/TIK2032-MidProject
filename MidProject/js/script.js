@@ -69,4 +69,3 @@ function floatAnimation() {
 
 // Panggil fungsi animasi saat halaman dimuat
 window.addEventListener('load', floatAnimation);
-
