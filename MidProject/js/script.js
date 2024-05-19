@@ -69,3 +69,63 @@ function floatAnimation() {
 
 // Panggil fungsi animasi saat halaman dimuat
 window.addEventListener('load', floatAnimation);
+
+function animateCircles() {
+  const homeSection = document.getElementById('home'); // Assuming you have a div with id 'home' for the home section
+  const canvas = document.createElement('canvas');
+  homeSection.appendChild(canvas);
+  const ctx = canvas.getContext('2d');
+
+  // Set canvas size to cover the home section
+  canvas.width = homeSection.offsetWidth;
+  canvas.height = homeSection.offsetHeight;
+
+  // Position the canvas to cover the entire home section
+  canvas.style.position = 'absolute';
+  canvas.style.top = '0';
+  canvas.style.left = '0';
+  canvas.style.zIndex = '-1'; // Ensure it's behind other content
+
+  const circles = [];
+
+  // Create circles
+  for (let i = 0; i < 50; i++) {
+    circles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      radius: Math.random() * 20 + 10,
+      vx: Math.random() * 2 - 1,
+      vy: Math.random() * 2 - 1,
+      color: `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    circles.forEach(circle => {
+      ctx.beginPath();
+      ctx.arc(circle.x, circle.y, circle.radius, 0, Math.PI * 2);
+      ctx.fillStyle = circle.color;
+      ctx.fill();
+      
+      // Update circle position
+      circle.x += circle.vx;
+      circle.y += circle.vy;
+
+      // Bounce off the edges of the canvas
+      if (circle.x + circle.radius > canvas.width || circle.x - circle.radius < 0) {
+        circle.vx *= -1;
+      }
+      if (circle.y + circle.radius > canvas.height || circle.y - circle.radius < 0) {
+        circle.vy *= -1;
+      }
+    });
+
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+}
+
+animateCircles();
